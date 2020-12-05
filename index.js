@@ -1,8 +1,8 @@
 // Load env variables
-require('dotenv').config({ path: `${__dirname}/.env` })
+require('dotenv').config()
 
 const Telegraf = require('telegraf')
-const bot = new Telegraf(process.env.TOKEN || TOKEN)
+const bot = new Telegraf(process.env.TOKEN || TELEGRAM_TOKEN)
 
 const cron = require('node-cron')
 
