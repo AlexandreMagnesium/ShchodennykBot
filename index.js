@@ -1,5 +1,5 @@
 // Load env variables
-require('dotenv').config()
+//require('dotenv').config()
 
 const Telegraf = require('telegraf')
 const bot = new Telegraf(TOKEN)
@@ -38,5 +38,5 @@ cron.schedule('0 7 * * *', () => {
 })
 
 
-bot.startPolling()
 bot.launch()
+bot.startPolling()
