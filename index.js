@@ -1,6 +1,9 @@
 // Load env variables
 require('dotenv').config({ path: `${__dirname}/.env` })
 
+const PORT = process.env.PORT || 3000;
+const URL = process.env.URL || "https://shchodennykbot.herokuapp.com/";
+
 const Telegraf = require('telegraf')
 const bot = new Telegraf(process.env.TOKEN)
 
@@ -37,13 +40,8 @@ cron.schedule('0 7 * * *', () => {
 })
 
 
-bot.startPolling()
+bot.telegram.setWebhook(`${URL}/bot${BOT_TOKEN}`);
+bot.startWebhook(`/bot${BOT_TOKEN}`, null, PORT);
+bot.launch();
 
-/*
-bot.launch({
-	webhook: {
-		domain: process.env.LOCALTUNNEL,
-		port: 3000
-	}
-})
-*/
+
