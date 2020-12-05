@@ -37,9 +37,13 @@ cron.schedule('0 7 * * *', () => {
 })
 
 
+bot.startPolling()
+
+/*
 bot.launch({
 	webhook: {
 		domain: process.env.LOCALTUNNEL,
 		port: 3000
 	}
 })
+*/
