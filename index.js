@@ -2,7 +2,7 @@
 require('dotenv').config({ path: `${__dirname}/.env` })
 
 const Telegraf = require('telegraf')
-const bot = new Telegraf(process.env.TOKEN)
+const bot = new Telegraf(process.env.TOKEN || TOKEN)
 
 const cron = require('node-cron')
 
