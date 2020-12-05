@@ -2,7 +2,7 @@
 require('dotenv').config()
 
 const Telegraf = require('telegraf')
-const bot = new Telegraf(process.env.TOKEN || TELEGRAM_TOKEN)
+const bot = new Telegraf(process.env.TOKEN)
 
 const cron = require('node-cron')
 
@@ -38,3 +38,4 @@ cron.schedule('0 7 * * *', () => {
 
 
 bot.startPolling()
+bot.launch()
