@@ -37,5 +37,5 @@ cron.schedule('0 7 * * *', () => {
 })
 
 
-bot.launch()
+//bot.launch()
 bot.startPolling()
